@@ -8,9 +8,11 @@ function play(x,y,bombs){
         gameB.push([]);
         for(j = 0 ; j < y; j++){
             var el = document.createElement("td");
-            el.addEventListener("mousedown",function(e){
-                console.log(i,j);
-            },true);
+            el.addEventListener("mousedown",(function(i,j){
+                function(e){
+                    console.log(i,j);
+                }
+            })(i,j),true);
 //            setAttribute("onmousedown","show(" + i + "," + j + ")");
             el.addEventListener("contextmenu",function(){
                 
